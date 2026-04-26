@@ -3,34 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Annabelle Bann — Photography & Video</title>
+  <title>Annabelle Bann — Photography &amp; Video</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&family=Bebas+Neue&family=Pinyon+Script&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    /* ── HOT CHOCOLATE PALETTE ── */
     :root {
-      --cream:    #f5f0e8;
-      --cream-dk: #ede8dc;
-      --sand:     #d4c8b0;
-      --charcoal: #1a1a1a;
-      --gray:     #8a8278;
-      --accent:   #c8a882;
-      --ink:      #2c2417;
+      --oat:    #e8dbcc;
+      --oat-dk: #d4c4b0;
+      --mug:    #5f0c2f;
+      --choc:   #3c0e18;
+      --pink:   #eaadc1;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      background: var(--cream);
-      color: var(--charcoal);
+      background: var(--oat);
+      color: var(--choc);
       font-family: 'Inter', sans-serif;
       font-weight: 300;
       overflow-x: hidden;
     }
 
-    /* ── NAV ── */
+    /* ════════════════════════════════
+       NAV — dark
+    ════════════════════════════════ */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -38,18 +39,14 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.1rem 3rem;
-      background: rgba(245,240,232,0.93);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--sand);
+      padding: 1rem 3rem;
+      background: var(--choc);
     }
 
     .nav-logo {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 1rem;
-      color: var(--ink);
       text-decoration: none;
+      display: flex;
+      align-items: center;
     }
 
     .nav-links {
@@ -60,217 +57,154 @@
 
     .nav-links a {
       text-decoration: none;
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.14em;
+      font-size: 0.6rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--gray);
-      transition: color 0.2s;
+      color: var(--oat);
+      opacity: 0.65;
+      transition: opacity 0.2s;
     }
 
-    .nav-links a:hover { color: var(--ink); }
+    .nav-links a:hover { opacity: 1; }
 
-    /* ── HERO ── */
+    /* ════════════════════════════════
+       HERO — dark, split
+    ════════════════════════════════ */
     .hero {
       min-height: 100vh;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      padding-top: 60px;
+      padding-top: 62px;
     }
 
-    .hero-left {
-      padding: 5rem 4rem;
+    .hero-img {
+      overflow: hidden;
+    }
+    .hero-img img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+    }
+
+    .hero-text {
+      background: var(--choc);
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      border-right: 1px solid var(--sand);
+      justify-content: center;
+      padding: 4rem 3.5rem;
+      gap: 0;
     }
 
     .hero-eyebrow {
-      font-size: 0.63rem;
-      letter-spacing: 0.2em;
+      font-size: 0.52rem;
+      letter-spacing: 0.26em;
       text-transform: uppercase;
-      color: var(--gray);
-      margin-bottom: 1.5rem;
+      color: var(--pink);
+      margin-bottom: 1.2rem;
     }
 
     .hero-name {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 3.5vw, 3.2rem);
-      font-style: italic;
-      color: var(--gray);
-      line-height: 1;
-      margin-bottom: 0.1rem;
-    }
-
-    .hero-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(5rem, 11vw, 9.5rem);
-      line-height: 0.85;
-      letter-spacing: -0.02em;
-      color: var(--charcoal);
-      margin-bottom: 3rem;
-    }
-
-    .hero-meta span {
-      display: block;
-      font-size: 0.63rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gray);
-      margin-bottom: 0.3rem;
-    }
-
-    .hero-right {
-      position: relative;
-      overflow: hidden;
-      background: var(--cream-dk);
-    }
-
-    .hero-right img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-    }
-
-    /* ── SHARED ── */
-    .section-inner {
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 0 3rem;
-    }
-
-    .section-label {
-      font-size: 0.6rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--gray);
+      font-family: 'Pinyon Script', cursive;
+      font-size: clamp(3rem, 5vw, 4.2rem);
+      color: var(--oat);
+      line-height: 1.1;
       margin-bottom: 0.6rem;
     }
 
-    .section-heading {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(3rem, 6vw, 5.5rem);
-      line-height: 1;
-      letter-spacing: 0.02em;
+    .hero-subtitle {
+      font-size: 0.52rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--pink);
+      opacity: 0.7;
+      margin-bottom: 2.2rem;
     }
 
-    /* ── ABOUT ── */
-    .about {
-      padding: 6rem 0;
-      background: var(--charcoal);
-      color: var(--cream);
-    }
-
-    .about .section-label { color: var(--accent); }
-    .about .section-heading { color: var(--cream); }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      margin-top: 3rem;
-      align-items: start;
-    }
-
-    .about-statement {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1rem, 1.8vw, 1.25rem);
+    .hero-bio {
+      font-family: 'Cormorant Garamond', serif;
       font-style: italic;
-      line-height: 1.85;
-      color: var(--cream);
+      font-size: 1.05rem;
+      color: var(--oat);
+      line-height: 1.7;
+      opacity: 0.75;
+      margin-bottom: 2.2rem;
     }
 
-    .about-statement::before {
-      content: '"';
-      font-size: 4.5rem;
-      line-height: 0;
-      vertical-align: -1.4rem;
-      color: var(--accent);
-      margin-right: 0.1rem;
-    }
-
-    .about-details { display: flex; flex-direction: column; gap: 2rem; }
-
-    .about-detail-item h4 {
-      font-size: 0.6rem;
+    .hero-cta {
+      display: inline-block;
+      align-self: flex-start;
+      font-size: 0.52rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.45rem;
+      padding: 0.75rem 1.8rem;
+      text-decoration: none;
+      background: var(--oat);
+      color: var(--choc);
+      transition: background 0.2s, color 0.2s;
+    }
+    .hero-cta:hover { background: var(--pink); color: var(--choc); }
+
+    /* ════════════════════════════════
+       ACCENT BANDS
+    ════════════════════════════════ */
+    .band-checker {
+      height: 18px;
+      background: repeating-conic-gradient(var(--mug) 0% 25%, var(--pink) 0% 50%) 0 0 / 18px 18px;
+    }
+    .band-stripe {
+      height: 7px;
+      background: repeating-linear-gradient(90deg, var(--mug) 0 22px, var(--pink) 22px 44px);
     }
 
-    .about-detail-item p {
-      font-size: 0.88rem;
-      line-height: 1.7;
-      color: var(--sand);
-    }
-
-    .tag-list {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.45rem;
-      margin-top: 0.45rem;
-    }
-
-    .tag-list li {
-      font-size: 0.68rem;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      padding: 0.35rem 0.85rem;
-      border: 1px solid var(--gray);
-      color: var(--sand);
-    }
-
-    /* ── GALLERY ── */
+    /* ════════════════════════════════
+       GALLERY SECTIONS — light
+    ════════════════════════════════ */
     .gallery-section {
-      padding: 6rem 0 3rem;
-    }
-
-    .gallery-section + .gallery-section {
-      padding-top: 3rem;
-    }
-
-    .gallery-section:last-of-type {
-      padding-bottom: 6rem;
+      background: var(--oat);
+      padding: 2.8rem 3rem;
     }
 
     .gallery-header {
       display: flex;
-      align-items: flex-end;
       justify-content: space-between;
-      margin-bottom: 2.5rem;
+      align-items: baseline;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--oat-dk);
     }
 
-    /* Pinterest / masonry layout */
+    .gallery-header h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 0.1em;
+      color: var(--choc);
+    }
+
+    .section-label {
+      font-size: 0.5rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mug);
+      margin-bottom: 0.2rem;
+    }
+
+    /* masonry photo grid */
     .photo-grid {
       columns: 3;
-      column-gap: 12px;
+      column-gap: 0.5rem;
     }
 
     .photo-card {
       break-inside: avoid;
-      margin-bottom: 12px;
-      display: flex;
-      flex-direction: column;
+      margin-bottom: 0.5rem;
       cursor: pointer;
-    }
-
-    .photo-card:hover .photo-img { transform: scale(1.03); }
-    .photo-card:hover .photo-overlay { opacity: 1; }
-
-    .photo-wrap {
       position: relative;
-      overflow: hidden;
-      background: var(--cream-dk);
     }
 
-    /* All photos portrait by default, horizontal class for landscape */
     .photo-wrap {
       aspect-ratio: 2/3;
+      overflow: hidden;
+      position: relative;
     }
 
     .photo-wrap.horizontal {
@@ -278,333 +212,398 @@
     }
 
     .photo-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.5s ease;
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform 0.45s ease;
     }
+
+    .photo-card:hover .photo-img { transform: scale(1.03); }
 
     .photo-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(26,26,26,0.5);
-      display: flex;
-      align-items: flex-end;
-      padding: 1rem;
-      opacity: 0;
-      transition: opacity 0.3s;
-      pointer-events: none;
+      position: absolute; inset: 0;
+      background: rgba(60, 14, 24, 0.35);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity 0.3s;
     }
+
+    .photo-card:hover .photo-overlay { opacity: 1; }
 
     .overlay-expand {
-      font-size: 0.62rem;
-      letter-spacing: 0.15em;
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: #fff;
+      color: var(--oat);
+      border: 1px solid rgba(232,219,204,0.6);
+      padding: 0.4rem 0.9rem;
     }
 
-    /* Caption below photo */
     .photo-caption {
-      padding: 0.5rem 0 0.2rem;
-      font-size: 0.8rem;
-      color: var(--gray);
-      border-bottom: 1px solid var(--sand);
-      min-height: 1.6rem;
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      color: var(--mug);
+      margin-top: 0.3rem;
+      min-height: 0.9rem;
+    }
+
+    /* ════════════════════════════════
+       ABOUT — dark, split
+    ════════════════════════════════ */
+    .about {
+      background: var(--choc);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .about-img {
+      overflow: hidden;
+      max-height: 600px;
+    }
+    .about-img img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+    }
+
+    .about-content {
+      padding: 4rem 3.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.8rem;
+    }
+
+    .about-heading {
+      font-family: 'Pinyon Script', cursive;
+      font-size: 3rem;
+      color: var(--oat);
+      line-height: 1.15;
+    }
+
+    .about-statement {
+      font-family: 'Cormorant Garamond', serif;
       font-style: italic;
+      font-size: 1.05rem;
+      color: var(--oat);
+      line-height: 1.75;
+      opacity: 0.8;
     }
 
-    /* ── CONTRIBUTIONS ── */
+    .about-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+
+    .about-detail-item h4 {
+      font-size: 0.5rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--pink);
+      margin-bottom: 0.3rem;
+    }
+
+    .about-detail-item p,
+    .about-detail-item ul {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      color: var(--oat);
+      opacity: 0.75;
+      line-height: 1.5;
+      list-style: none;
+    }
+
+    .tag-list { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+    .tag-list li {
+      font-size: 0.48rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1px solid rgba(232,219,204,0.25);
+      color: var(--oat);
+      opacity: 0.65;
+      padding: 0.2rem 0.5rem;
+    }
+
+    /* ════════════════════════════════
+       CONTRIBUTIONS — light
+    ════════════════════════════════ */
     .contributions {
-      padding: 6rem 0;
-      background: var(--charcoal);
-      color: var(--cream);
+      background: var(--oat);
+      padding: 3rem;
     }
 
-    .contributions .section-label { color: var(--accent); }
-    .contributions .section-heading { color: var(--cream); }
+    .contributions-heading {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      letter-spacing: 0.1em;
+      color: var(--choc);
+      margin-bottom: 0.3rem;
+    }
 
     .contrib-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      margin-top: 3rem;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.5rem;
     }
 
     .contrib-card {
-      border: 1px solid #2e2e2e;
-      padding: 2rem;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
-      transition: border-color 0.25s;
+      gap: 0.6rem;
+      padding: 1.8rem;
+      border: 1px solid var(--oat-dk);
       text-decoration: none;
-      color: inherit;
+      color: var(--choc);
+      transition: border-color 0.2s, background 0.2s;
     }
 
-    .contrib-card:hover { border-color: var(--accent); }
+    .contrib-card:hover {
+      border-color: var(--mug);
+      background: rgba(95,12,47,0.04);
+    }
 
     .contrib-tag {
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
+      font-size: 0.48rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--accent);
+      color: var(--mug);
     }
 
     .contrib-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
-      font-style: italic;
-      font-weight: 400;
-      color: var(--cream);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--choc);
       line-height: 1.3;
     }
 
     .contrib-desc {
-      font-size: 0.85rem;
-      line-height: 1.75;
-      color: var(--sand);
-      flex: 1;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.92rem;
+      color: var(--choc);
+      line-height: 1.6;
+      opacity: 0.75;
     }
 
     .contrib-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.68rem;
-      letter-spacing: 0.15em;
+      font-size: 0.48rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--accent);
-      margin-top: 0.5rem;
+      color: var(--mug);
+      margin-top: auto;
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--oat-dk);
     }
 
-    .contrib-link::after {
-      content: '→';
-      transition: transform 0.2s;
-    }
-
-    .contrib-card:hover .contrib-link::after { transform: translateX(4px); }
-
-    /* ── CONTACT ── */
+    /* ════════════════════════════════
+       CONTACT — dark
+    ════════════════════════════════ */
     .contact {
-      padding: 6rem 0;
-      background: var(--charcoal);
-      color: var(--cream);
+      background: var(--choc);
+      padding: 4rem 3rem;
     }
 
-    .contact .section-label { color: var(--accent); }
-    .contact .section-heading { color: var(--cream); }
-
-    .contact-grid {
+    .contact-inner {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1.4fr;
       gap: 5rem;
-      margin-top: 3.5rem;
       align-items: start;
     }
 
-    .contact-cta {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.1rem, 2vw, 1.6rem);
-      font-style: italic;
-      line-height: 1.65;
-      color: var(--cream);
-      margin-bottom: 2.5rem;
+    .contact-left { display: flex; flex-direction: column; gap: 2rem; }
+
+    .contact-heading {
+      font-family: 'Pinyon Script', cursive;
+      font-size: 3.2rem;
+      color: var(--oat);
+      line-height: 1.15;
     }
 
-    .contact-info { display: flex; flex-direction: column; gap: 2rem; }
+    .contact-cta {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--oat);
+      line-height: 1.7;
+      opacity: 0.75;
+    }
+
+    .contact-info { display: flex; flex-direction: column; gap: 1rem; }
 
     .contact-info-item h4 {
-      font-size: 0.6rem;
+      font-size: 0.48rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.4rem;
+      color: var(--pink);
+      margin-bottom: 0.2rem;
     }
 
     .contact-info-item a,
     .contact-info-item p {
+      font-family: 'Cormorant Garamond', serif;
       font-size: 0.95rem;
-      color: var(--sand);
+      color: var(--oat);
+      opacity: 0.75;
       text-decoration: none;
-      transition: color 0.2s;
+      line-height: 1.5;
     }
 
-    .contact-info-item a:hover { color: var(--cream); }
+    .contact-info-item a:hover { opacity: 1; }
 
-    .social-links { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 0.1rem; }
+    .social-links { display: flex; flex-direction: column; gap: 0.15rem; }
 
-    .social-link {
-      font-size: 0.63rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gray);
-      text-decoration: none;
-      padding-bottom: 2px;
-      border-bottom: 1px solid transparent;
-      transition: all 0.2s;
-    }
-
-    .social-link:hover { color: var(--accent); border-bottom-color: var(--accent); }
-
-    .contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
+    /* form */
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
 
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 
-    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.3rem; }
 
     .form-group label {
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
+      font-size: 0.48rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--gray);
+      color: var(--pink);
     }
 
     .form-group input,
-    .form-group textarea,
-    .form-group select {
+    .form-group select,
+    .form-group textarea {
       background: transparent;
       border: none;
-      border-bottom: 1px solid var(--gray);
-      padding: 0.7rem 0;
-      color: var(--cream);
-      font-family: 'Inter', sans-serif;
-      font-size: 0.88rem;
-      font-weight: 300;
+      border-bottom: 1px solid rgba(232,219,204,0.3);
+      padding: 0.5rem 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.95rem;
+      color: var(--oat);
       outline: none;
       transition: border-color 0.2s;
-      width: 100%;
     }
 
     .form-group input::placeholder,
-    .form-group textarea::placeholder { color: #4a4540; }
-    .form-group select option { background: var(--charcoal); }
+    .form-group textarea::placeholder { color: rgba(232,219,204,0.35); }
+
     .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus { border-bottom-color: var(--accent); }
-    .form-group textarea { resize: none; min-height: 90px; }
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--pink); }
+
+    .form-group select option { background: var(--choc); color: var(--oat); }
+
+    .form-group textarea { resize: vertical; min-height: 100px; }
 
     .submit-btn {
       align-self: flex-start;
-      margin-top: 0.5rem;
-      padding: 0.9rem 2.5rem;
-      background: var(--accent);
+      background: var(--oat);
+      color: var(--choc);
       border: none;
-      cursor: pointer;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 500;
+      padding: 0.75rem 2rem;
+      font-size: 0.52rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--charcoal);
-      transition: background 0.25s, transform 0.2s;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      margin-top: 0.5rem;
     }
+    .submit-btn:hover { background: var(--pink); }
 
-    .submit-btn:hover { background: var(--cream); transform: translateY(-2px); }
-
-    /* ── FOOTER ── */
+    /* ════════════════════════════════
+       FOOTER — dark
+    ════════════════════════════════ */
     footer {
-      background: var(--ink);
-      padding: 1.75rem 3rem;
+      background: var(--choc);
+      border-top: 1px solid rgba(232,219,204,0.1);
+      padding: 1.4rem 3rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
     .footer-name {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      color: var(--sand);
-      font-size: 0.9rem;
+      font-family: 'Pinyon Script', cursive;
+      font-size: 1.3rem;
+      color: var(--oat);
     }
 
     .footer-copy {
-      font-size: 0.6rem;
-      letter-spacing: 0.12em;
-      color: var(--gray);
+      font-size: 0.48rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
+      color: var(--oat);
+      opacity: 0.4;
     }
 
-    /* ── LIGHTBOX ── */
+    /* ════════════════════════════════
+       LIGHTBOX
+    ════════════════════════════════ */
     .lightbox {
+      position: fixed; inset: 0;
+      background: rgba(60,14,24,0.96);
+      z-index: 999;
       display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 200;
-      background: rgba(26,26,26,0.97);
       align-items: center;
       justify-content: center;
+      flex-direction: column;
+      gap: 1rem;
     }
 
     .lightbox.open { display: flex; }
 
     .lightbox-img {
-      max-width: 90vw;
-      max-height: 88vh;
+      max-width: 88vw;
+      max-height: 82vh;
       object-fit: contain;
     }
 
     .lightbox-caption {
-      position: fixed;
-      bottom: 1.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      font-family: 'Playfair Display', serif;
+      font-family: 'Cormorant Garamond', serif;
       font-style: italic;
       font-size: 0.9rem;
-      color: var(--sand);
+      color: var(--oat);
+      opacity: 0.7;
+      letter-spacing: 0.05em;
     }
 
     .lightbox-close {
-      position: fixed;
-      top: 1.5rem;
-      right: 2rem;
-      background: none;
-      border: none;
-      color: var(--cream);
-      font-size: 2rem;
-      cursor: pointer;
-      opacity: 0.6;
+      position: absolute; top: 1.5rem; right: 2rem;
+      background: none; border: none;
+      font-size: 2rem; color: var(--oat);
+      cursor: pointer; opacity: 0.6;
       transition: opacity 0.2s;
     }
-
     .lightbox-close:hover { opacity: 1; }
 
     .lb-nav {
-      position: fixed;
-      top: 50%;
-      transform: translateY(-50%);
-      background: none;
-      border: none;
-      color: var(--cream);
-      font-size: 2rem;
-      cursor: pointer;
-      padding: 1rem;
-      opacity: 0.4;
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: none; border: none;
+      font-size: 1.8rem; color: var(--oat);
+      cursor: pointer; opacity: 0.4;
       transition: opacity 0.2s;
+      padding: 1rem;
     }
-
     .lb-nav:hover { opacity: 1; }
     .lb-prev { left: 1rem; }
     .lb-next { right: 1rem; }
 
-    /* ── RESPONSIVE ── */
-    @media (max-width: 860px) {
+    /* ════════════════════════════════
+       RESPONSIVE
+    ════════════════════════════════ */
+    @media (max-width: 900px) {
       nav { padding: 1rem 1.5rem; }
-      .nav-links { gap: 1.25rem; }
-      .hero { grid-template-columns: 1fr; }
-      .hero-right { height: 55vw; }
-      .hero-left { padding: 3rem 1.5rem; }
-      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .section-inner { padding: 0 1.5rem; }
-      .photo-grid { grid-template-columns: repeat(2, 1fr); }
-      .gallery-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .nav-links { gap: 1.5rem; }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-img { min-height: 50vw; }
+      .about { grid-template-columns: 1fr; }
+      .about-img { max-height: 50vw; }
+      .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .contrib-grid { grid-template-columns: 1fr; }
+      .photo-grid { columns: 2; }
+      .gallery-section { padding: 2rem 1.5rem; }
       .form-row { grid-template-columns: 1fr; }
-      footer { flex-direction: column; gap: 0.75rem; text-align: center; }
     }
 
-    @media (max-width: 500px) {
-      .photo-grid { grid-template-columns: 1fr; }
+    @media (max-width: 600px) {
+      .photo-grid { columns: 1; }
+      .about-details { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -612,7 +611,13 @@
 
   <!-- NAV -->
   <nav>
-    <a class="nav-logo" href="#home">Annabelle Bann</a>
+    <a class="nav-logo" href="#home">
+      <svg height="46" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="AB">
+        <ellipse cx="21" cy="21" rx="19" ry="19" stroke="#e8dbcc" stroke-width="1.2"/>
+        <ellipse cx="21" cy="21" rx="15" ry="15" stroke="#e8dbcc" stroke-width="0.5"/>
+        <text x="21" y="27" text-anchor="middle" font-family="'Pinyon Script',cursive" font-size="19" fill="#e8dbcc">AB</text>
+      </svg>
+    </a>
     <ul class="nav-links">
       <li><a href="#food">Food</a></li>
       <li><a href="#people">People</a></li>
@@ -624,156 +629,162 @@
 
   <!-- HERO -->
   <section class="hero" id="home">
-    <div class="hero-left">
-      <p class="hero-eyebrow">Food Photography &amp; Video · Available for Commercial Work</p>
-      <h1>
-        <span class="hero-name">Annabelle Bann</span><br />
-        <span class="hero-title">Portfolio</span>
-      </h1>
-      <div class="hero-meta">
-        <span>Food · People · Events</span>
-        <span>Ithaca, New York &amp; São Paulo, Brazil</span>
-      </div>
-    </div>
-    <div class="hero-right">
+    <div class="hero-img">
       <img src="images/food/HoneySalt-06.jpg" alt="Annabelle Bann Food Photography" />
     </div>
+    <div class="hero-text">
+      <p class="hero-eyebrow">Food Photography &amp; Video · Available for Commercial Work</p>
+      <p class="hero-name">Annabelle<br/>Bann</p>
+      <p class="hero-subtitle">Food · People · Events · Ithaca, NY &amp; São Paulo</p>
+      <p class="hero-bio">Trained at Le Cordon Bleu, studying hospitality at Cornell. Working toward a future as a food photographer and business owner.</p>
+      <a class="hero-cta" href="#food">View Portfolio</a>
+    </div>
   </section>
+
+  <!-- BAND -->
+  <div class="band-checker"></div>
+
+  <!-- GALLERIES (rendered by JS) -->
+  <div id="gallery-food"   class="gallery-section"></div>
+  <div class="band-checker"></div>
+  <div id="gallery-people" class="gallery-section"></div>
+  <div class="band-stripe"></div>
+  <div id="gallery-events" class="gallery-section"></div>
+
+  <!-- BAND -->
+  <div class="band-checker"></div>
 
   <!-- ABOUT -->
   <section class="about" id="about">
-    <div class="section-inner">
-      <p class="section-label">About</p>
-      <h2 class="section-heading">Artist Statement</h2>
-      <div class="about-grid">
-        <div>
-          <p class="about-statement">
-            Annabelle Bann is from São Paulo, Brazil, currently based in Ithaca, New York. She's passionate about food and photography, using both to tell stories rooted in culture and experience. After training at Le Cordon Bleu, she's now studying hospitality at Cornell, working toward a future as a food photographer and business owner.
-          </p>
+    <div class="about-img">
+      <img src="images/Tezza-6488.jpg" alt="Annabelle Bann" />
+    </div>
+    <div class="about-content">
+      <p class="section-label" style="color:var(--pink)">About</p>
+      <p class="about-heading">Annabelle<br/>Bann</p>
+      <p class="about-statement">
+        Annabelle Bann is from São Paulo, Brazil, currently based in Ithaca, New York. She's passionate about food and photography, using both to tell stories rooted in culture and experience. After training at Le Cordon Bleu, she's now studying hospitality at Cornell, working toward a future as a food photographer and business owner.
+      </p>
+      <div class="about-details">
+        <div class="about-detail-item">
+          <h4>Based In</h4>
+          <p>Ithaca, New York &amp; São Paulo, Brazil</p>
         </div>
-        <div class="about-details">
-          <div class="about-detail-item">
-            <h4>Based In</h4>
-            <p>Ithaca, New York &amp; São Paulo, Brazil</p>
-          </div>
-          <div class="about-detail-item">
-            <h4>Education</h4>
-            <p>Le Cordon Bleu · Cornell University, Hospitality</p>
-          </div>
-          <div class="about-detail-item">
-            <h4>Specialties</h4>
-            <ul class="tag-list">
-              <li>Food Photography</li>
-              <li>Editorial</li>
-              <li>Brand Campaigns</li>
-              <li>Social Content</li>
-              <li>Events</li>
-              <li>Lifestyle</li>
-              <li>Portrait</li>
-            </ul>
-          </div>
-          <div class="about-detail-item">
-            <h4>Available For</h4>
-            <p>Commercial campaigns, editorial shoots, brand partnerships, restaurant &amp; food content, and marketing collateral.</p>
-          </div>
+        <div class="about-detail-item">
+          <h4>Education</h4>
+          <p>Le Cordon Bleu · Cornell University</p>
+        </div>
+        <div class="about-detail-item">
+          <h4>Specialties</h4>
+          <ul class="tag-list">
+            <li>Food Photography</li>
+            <li>Editorial</li>
+            <li>Brand Campaigns</li>
+            <li>Social Content</li>
+            <li>Events</li>
+            <li>Portrait</li>
+          </ul>
+        </div>
+        <div class="about-detail-item">
+          <h4>Available For</h4>
+          <p>Commercial campaigns, editorial shoots, brand partnerships, restaurant &amp; food content.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- GALLERIES (rendered by JS from the PHOTOS object below) -->
-  <div id="gallery-food"   class="gallery-section" id="food"></div>
-  <div id="gallery-people" class="gallery-section"></div>
-  <div id="gallery-events" class="gallery-section"></div>
+  <!-- BAND -->
+  <div class="band-stripe"></div>
 
   <!-- CONTRIBUTIONS -->
   <section class="contributions" id="contributions">
-    <div class="section-inner">
-      <p class="section-label">Featured Work</p>
-      <h2 class="section-heading">Contributions</h2>
-      <div class="contrib-grid">
+    <p class="section-label">Featured Work</p>
+    <h2 class="contributions-heading">Contributions</h2>
+    <div class="contrib-grid">
 
-        <a class="contrib-card" href="https://www.instagram.com/reel/C3GWoBRRQHn/" target="_blank" rel="noopener">
-          <span class="contrib-tag">Video Production · Le Cordon Bleu Brasil</span>
-          <h3 class="contrib-title">Le Cordon Bleu Brasil — Instagram Reel</h3>
-          <p class="contrib-desc">Contributed to this video reel produced for Le Cordon Bleu Brasil's official Instagram, showcasing the culinary school's experience and culture.</p>
-          <span class="contrib-link">View on Instagram</span>
-        </a>
+      <a class="contrib-card" href="https://www.instagram.com/reel/C3GWoBRRQHn/" target="_blank" rel="noopener">
+        <span class="contrib-tag">Video Production · Le Cordon Bleu Brasil</span>
+        <h3 class="contrib-title">Le Cordon Bleu Brasil — Instagram Reel</h3>
+        <p class="contrib-desc">Contributed to this video reel produced for Le Cordon Bleu Brasil's official Instagram, showcasing the culinary school's experience and culture.</p>
+        <span class="contrib-link">View on Instagram ↗</span>
+      </a>
 
-        <a class="contrib-card" href="https://www.instagram.com/hotelezracornell/" target="_blank" rel="noopener">
-          <span class="contrib-tag">Social Media Direction · Hotel Ezra Cornell</span>
-          <h3 class="contrib-title">Hotel Ezra Cornell — Instagram & LinkedIn</h3>
-          <p class="contrib-desc">As Assistant Director of Marketing & Media for Hotel Ezra Cornell — a student-run hospitality conference at Cornell — managed and directed the brand's Instagram and LinkedIn, overseeing content creation, graphic design, and a creative team.</p>
-          <span class="contrib-link">View Instagram</span>
-        </a>
+      <a class="contrib-card" href="https://www.instagram.com/hotelezracornell/" target="_blank" rel="noopener">
+        <span class="contrib-tag">Social Media Direction · Hotel Ezra Cornell</span>
+        <h3 class="contrib-title">Hotel Ezra Cornell — Instagram &amp; LinkedIn</h3>
+        <p class="contrib-desc">As Assistant Director of Marketing &amp; Media for Hotel Ezra Cornell — a student-run hospitality conference at Cornell — managed and directed the brand's Instagram and LinkedIn, overseeing content creation, graphic design, and a creative team.</p>
+        <span class="contrib-link">View Instagram ↗</span>
+      </a>
 
-      </div>
     </div>
   </section>
 
+  <!-- BAND -->
+  <div class="band-checker"></div>
+
   <!-- CONTACT -->
   <section class="contact" id="contact">
-    <div class="section-inner">
-      <p class="section-label">Get In Touch</p>
-      <h2 class="section-heading">Let's Work</h2>
-      <div class="contact-grid">
+    <div class="contact-inner">
+      <div class="contact-left">
         <div>
-          <p class="contact-cta">
-            Available for food campaigns, brand partnerships, editorial shoots, and restaurant content. Let's create something together.
-          </p>
-          <div class="contact-info">
-            <div class="contact-info-item">
-              <h4>Email</h4>
-              <a href="mailto:annabelle@bann.com">annabelle@bann.com</a>
-            </div>
-            <div class="contact-info-item">
-              <h4>Location</h4>
-              <p>Ithaca, New York &amp; São Paulo, Brazil</p>
-            </div>
-            <div class="contact-info-item">
-              <h4>Instagram</h4>
-              <div class="social-links">
-                <a href="https://instagram.com/annabelle.bann" target="_blank" rel="noopener" class="social-link">@annabelle.bann</a>
-                <a href="https://instagram.com/thefridayfood" target="_blank" rel="noopener" class="social-link">@thefridayfood</a>
-              </div>
+          <p class="section-label" style="color:var(--pink)">Get In Touch</p>
+          <p class="contact-heading">Let's Work<br/>Together.</p>
+        </div>
+        <p class="contact-cta">
+          Available for food campaigns, brand partnerships, editorial shoots, and restaurant content. Let's create something together.
+        </p>
+        <div class="contact-info">
+          <div class="contact-info-item">
+            <h4>Email</h4>
+            <a href="mailto:annabelle@bann.com">annabelle@bann.com</a>
+          </div>
+          <div class="contact-info-item">
+            <h4>Location</h4>
+            <p>Ithaca, New York &amp; São Paulo, Brazil</p>
+          </div>
+          <div class="contact-info-item">
+            <h4>Instagram</h4>
+            <div class="social-links">
+              <a href="https://instagram.com/annabelle.bann" target="_blank" rel="noopener">@annabelle.bann</a>
+              <a href="https://instagram.com/thefridayfood" target="_blank" rel="noopener">@thefridayfood</a>
             </div>
           </div>
         </div>
-        <form class="contact-form" onsubmit="handleSubmit(event)">
-          <div class="form-row">
-            <div class="form-group">
-              <label>Name</label>
-              <input type="text" placeholder="Your name" required />
-            </div>
-            <div class="form-group">
-              <label>Company</label>
-              <input type="text" placeholder="Brand or agency" />
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Email</label>
-            <input type="email" placeholder="your@email.com" required />
-          </div>
-          <div class="form-group">
-            <label>Project Type</label>
-            <select>
-              <option value="">Select a category</option>
-              <option>Food Photography</option>
-              <option>Brand Campaign</option>
-              <option>Editorial Shoot</option>
-              <option>Restaurant Content</option>
-              <option>Social Content</option>
-              <option>Events</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Message</label>
-            <textarea placeholder="Tell me about your project…" required></textarea>
-          </div>
-          <button type="submit" class="submit-btn">Send Inquiry</button>
-        </form>
       </div>
+      <form class="contact-form" action="https://formspree.io/f/xkokebyz" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="name" placeholder="Your name" required />
+          </div>
+          <div class="form-group">
+            <label>Company</label>
+            <input type="text" name="company" placeholder="Brand or agency" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" name="email" placeholder="your@email.com" required />
+        </div>
+        <div class="form-group">
+          <label>Project Type</label>
+          <select name="project_type">
+            <option value="">Select a category</option>
+            <option>Food Photography</option>
+            <option>Brand Campaign</option>
+            <option>Editorial Shoot</option>
+            <option>Restaurant Content</option>
+            <option>Social Content</option>
+            <option>Events</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea name="message" placeholder="Tell me about your project…" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Inquiry</button>
+      </form>
     </div>
   </section>
 
@@ -837,6 +848,9 @@
       { src: "images/food/IMG_6994.JPG",          title: "" },
       { src: "images/food/IMG_7010_1.JPG",        title: "" },
       { src: "images/food/IMG_7104.JPG",          title: "" },
+      { src: "images/food/1Q6A9024.JPG",          title: "" },
+      { src: "images/food/1Q6A8851.JPG",          title: "", h: true },
+      { src: "images/food/1Q6A8702.JPG",          title: "" },
     ],
 
     people: [
@@ -895,7 +909,7 @@
   };
 
   // ================================================================
-  //  GALLERY RENDERER — no need to edit below this line
+  //  GALLERY RENDERER
   // ================================================================
 
   const SECTIONS = [
@@ -904,7 +918,6 @@
     { key: 'events', containerId: 'gallery-events', label: 'Photography', heading: 'Events', anchor: 'events' },
   ];
 
-  // Flat list of all photos for lightbox navigation
   let allPhotos = [];
   let lbIndex   = 0;
 
@@ -916,18 +929,16 @@
       photos.forEach(p => allPhotos.push(p));
 
       const container = document.getElementById(sec.containerId);
-      container.id = sec.anchor; // set anchor id for nav
+      container.id = sec.anchor;
       container.innerHTML = `
-        <div class="section-inner">
-          <div class="gallery-header">
-            <div>
-              <p class="section-label">${sec.label}</p>
-              <h2 class="section-heading">${sec.heading}</h2>
-            </div>
-            <span style="font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gray)">${photos.length} photos</span>
+        <div class="gallery-header">
+          <div>
+            <p class="section-label">${sec.label}</p>
+            <h2>${sec.heading}</h2>
           </div>
-          <div class="photo-grid" id="grid-${sec.key}"></div>
+          <span style="font-size:0.5rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--mug)">${photos.length} photos</span>
         </div>
+        <div class="photo-grid" id="grid-${sec.key}"></div>
       `;
 
       const grid = document.getElementById('grid-' + sec.key);
@@ -977,25 +988,11 @@
 
   document.addEventListener('keydown', e => {
     if (!document.getElementById('lightbox').classList.contains('open')) return;
-    if (e.key === 'Escape')      closeLightbox();
-    if (e.key === 'ArrowLeft')   shiftLightbox(-1);
-    if (e.key === 'ArrowRight')  shiftLightbox(1);
+    if (e.key === 'Escape')     closeLightbox();
+    if (e.key === 'ArrowLeft')  shiftLightbox(-1);
+    if (e.key === 'ArrowRight') shiftLightbox(1);
   });
 
-  // Contact form
-  function handleSubmit(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('.submit-btn');
-    btn.textContent = 'Sent!';
-    btn.style.background = '#8a8278';
-    setTimeout(() => {
-      btn.textContent = 'Send Inquiry';
-      btn.style.background = '';
-      e.target.reset();
-    }, 3000);
-  }
-
-  // Build on load
   buildGalleries();
   </script>
 </body>
